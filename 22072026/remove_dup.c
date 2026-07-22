@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main(){
+int a,i,j,n,dei[100],an[100],temp,sm,k;
+scanf("%d",&n);
+for(i=0;i<n;i++)
+    {
+        scanf("%d",&dei[i]);
+    }
+    i=0;
+for(a=0;a<n;a++)
+    {
+        sm=0;
+        for(k=0;k<a;k++)
+        {
+            if(dei[k]==dei[a])
+            {
+                sm=1;
+                break;
+            }
+        }
+        if(sm==1)
+            continue;
+        for(j=a+1;j<n;j++)
+        {
+            if(dei[a]==dei[j])
+            {
+                for(a;a<n-1;a++)
+                    dei[a]=dei[a+1];
+            }
+            }
+    }
+for(i=0;i<n-1;i++)
+    if(dei[i]!=dei[i-1])
+    printf("%d",dei[i]);
+}
